@@ -2,9 +2,9 @@
 
 namespace VKauto\Utils;
 
-use Exception;
 use VKauto\Utils\QueryBuilder;
 use VKauto\Utils\Request;
+use VKauto\Utils\Account;
 
 class Auth
 {
@@ -19,6 +19,6 @@ class Auth
 			die;
 		}
 
-		return $account;
+		return new Account($account->access_token, $account->user_id);
 	}
 }
