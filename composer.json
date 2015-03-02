@@ -10,7 +10,7 @@
     "require": {},
     "autoload": {
     	"psr-4": {
-    		"VKauto\\Utils": "src/vkauto/Utils"
+    		"VKauto\\Utils": "src/VKauto/Utils"
     	}
     }
 }
