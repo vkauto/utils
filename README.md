@@ -30,7 +30,7 @@ $response = Request::post('http://somewhere.net',
   'something' => 'Some text'
 ]);
 
-# Запрос возвращает stdClass
+# Метод возвращает stdClass
 $response = Request::VK('https://api.vk.com/method/users.get?user_id=1');
 
 # Если вторым аргументом передать инициализированный класс \VKauto\CaptchaRecognition\Captcha, то капча будет распознаваться и отправляться автоматически, если потребуется
