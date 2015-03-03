@@ -17,6 +17,9 @@ trait MagicProperties
 	 */
 	public function __get($property)
 	{
+
+		// TODO: переписать, чтобы работало и в обратном порядке
+
 		if (!strpos($property, '_'))
 		{
 			$pieces = preg_split('/(?=[A-Z])/', $property);
