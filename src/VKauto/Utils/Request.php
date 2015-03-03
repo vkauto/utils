@@ -37,8 +37,8 @@ class Request
 			{
 				switch($response->error->error_code)
 				{
-					case 113:
-						die("NOPE");
+					case 14:
+						die("NEEDED SOME CAPTCHA. PLEASE WAIT UNTIL I WILL WRITE ANOTHER ONE PACKAGE.");
 						break;
 
 					default:
