@@ -63,15 +63,14 @@ class Request
 							break;
 						}
 
-						// TODO: пересобирать URL
 						if ($captchaText = $captcha->recognize($response->error->captcha_img) != false)
 						{
-							if ($index = strpos($url, '&captcha_sid'))
-							{
-								$url = mb_substr($url, 0, $index, 'UTF-8');
-							}
+							$queryData = QueryBuilder::parseURL($url);
 
-							return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
+							$queryData['parameters']['captcha_sid'] = $response->error->captcha_sid;
+							$queryData['parameters']['captcha_text'] = $captchaText;
+
+							return self::VK(QueryBuilder::buildURL($queryData['method'], $queryData['parameters']));
 						}
 						else
 						{
