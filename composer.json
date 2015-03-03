@@ -7,7 +7,15 @@
             "email": "miserable.coder@gmail.com"
         }
     ],
-    "require": {},
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/vkauto/captcha-recognition.git"
+        }
+    ],
+    "require": {
+        "vkauto/captcha-recognition": "dev-master"
+    },
     "autoload": {
     	"psr-4": {
     		"VKauto\\Utils\\": "src/VKauto/Utils"

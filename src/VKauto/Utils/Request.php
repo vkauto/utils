@@ -2,7 +2,7 @@
 
 namespace VKauto\Utils;
 
-use Exception;
+use VKauto\CaptchaRecognition\Captcha;
 
 class Request
 {
@@ -47,7 +47,7 @@ class Request
 		return $response;
 	}
 
-	public static function VK($url)
+	public static function VK($url, Captcha $captcha = null)
 	{
 		$response = json_decode(self::get($url), false);
 
@@ -58,7 +58,13 @@ class Request
 				switch($response->error->error_code)
 				{
 					case 14:
-						die("NEEDED SOME CAPTCHA. PLEASE WAIT UNTIL I WILL WRITE ANOTHER ONE PACKAGE.");
+
+						if (is_null($captcha))
+						{
+							break;
+						}
+
+						die(var_dump($captcha));
 						break;
 
 					default:
