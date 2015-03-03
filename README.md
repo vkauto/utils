@@ -52,3 +52,26 @@ use VKauto\Utils\Log;
 # [H:i:s d.m.Y] [prefixes] [are] [cool] Something clever.
 Log::write('Something clever.', ['prefixes', 'are', 'cool']);
 ```
+
+# Magic Properties
+```php
+class User
+{
+  use VKauto\Utils\MagicProperties;
+  
+  public function __construct()
+  {
+    $this->data['user_name'] = 'John Doe';
+  }
+  
+  // ...
+}
+
+$user = new User;
+
+# John Doe
+echo $user->user_name;
+
+# По-прежнму John Doe
+echo $user->userName;
+```
