@@ -36,7 +36,7 @@ $response = Request::VK('https://api.vk.com/method/users.get?user_id=1');
 # Если вторым аргументом передать инициализированный класс \VKauto\CaptchaRecognition\Captcha, то капча будет распознаваться и отправляться автоматически, если потребуется
 use VKauto\CaptchaRecognition\Captcha;
 // ...
-$captcha = new Captcha(Captcha::AntiCaptchaService, 'api key');
+$captcha = new Captcha(Captcha::AntiCaptchaService, 'API key');
 $response = Request::VK('https://api.vk.com/method/users.get?user_id=1', $captcha);
 
 # А еще можно использовать QueryBuilder
