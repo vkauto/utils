@@ -72,6 +72,6 @@ $user = new User;
 # John Doe
 echo $user->user_name;
 
-# По-прежнму John Doe
+# По-прежнему John Doe
 echo $user->userName;
 ```
