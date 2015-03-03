@@ -8,8 +8,6 @@ class QueryBuilder
 	{
 		$url = "https://api.vk.com/method/{$method}";
 
-		$parameters['v'] = 5.28;
-
 		foreach ($parameters as $parameter => $value)
 		{
 			$prefix = ($parameter == array_keys($parameters)[0]) ? '?' : '&';

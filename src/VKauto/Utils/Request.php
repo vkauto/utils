@@ -42,7 +42,6 @@ class Request
 						break;
 
 					default:
-						return $response;
 						break;
 				}
 			}
