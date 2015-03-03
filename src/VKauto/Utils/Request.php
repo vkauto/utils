@@ -64,8 +64,14 @@ class Request
 							break;
 						}
 
-						die(var_dump($captcha));
-						break;
+						if ($captchaText = $captcha->recognize($response->error->captcha_img) === false)
+						{
+							return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
+						}
+						else
+						{
+							break;
+						}
 
 					default:
 						break;
