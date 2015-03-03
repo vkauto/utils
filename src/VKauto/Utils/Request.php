@@ -58,23 +58,19 @@ class Request
 				switch($response->error->error_code)
 				{
 					case 14:
-
-						var_dump($url);
-
 						if (is_null($captcha))
 						{
 							break;
 						}
 
-						if ($captchaText = $captcha->recognize($response->error->captcha_img) === false)
+						if ($captchaText = $captcha->recognize($response->error->captcha_img) != false)
 						{
 							if ($index = strpos($url, '&captcha_sid'))
 							{
 								$url = mb_substr($url, 0, $index, 'UTF-8');
 							}
 
-							// return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
-							return die(var_dump($url));
+							return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
 						}
 						else
 						{
