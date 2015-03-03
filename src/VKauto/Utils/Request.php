@@ -35,7 +35,16 @@ class Request
 		{
 			if (isset($response->error->error_code))
 			{
-				die(var_dump($response->error->error_code));
+				switch($response->error->error_code)
+				{
+					case 113:
+						die("NOPE");
+						break;
+
+					default:
+						return $response;
+						break;
+				}
 			}
 		}
 
