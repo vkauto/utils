@@ -6,6 +6,11 @@ use VKauto\CaptchaRecognition\Captcha;
 
 class Request
 {
+	/**
+	 * GET запрос
+	 * @param  string $url
+	 * @return string
+	 */
 	public static function get($url)
 	{
 		$options = [
@@ -26,6 +31,12 @@ class Request
 		return $response;
 	}
 
+	/**
+	 * POST запрос
+	 * @param  string $url
+	 * @param  array  $data
+	 * @return string
+	 */
 	public static function post($url, $data = array())
 	{
 		$options = [
@@ -47,6 +58,12 @@ class Request
 		return $response;
 	}
 
+	/**
+	 * Отдельный метод для отправки запросов API.VK.COM
+	 * @param string       $url
+	 * @param Captcha|null $captcha
+	 * @return stdClass
+	 */
 	public static function VK($url, Captcha $captcha = null)
 	{
 		$response = json_decode(self::get($url), false);

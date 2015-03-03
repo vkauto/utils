@@ -4,6 +4,11 @@ namespace VKauto\Utils;
 
 class Log
 {
+	/**
+	 * Метод отправляет сообщение в консоль
+	 * @param  string $data
+	 * @param  array  $prefixes
+	 */
 	public static function write($data, $prefixes = array())
 	{
 		$text = @date("[H:i:s d.m.Y]\x20");
