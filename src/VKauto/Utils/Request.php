@@ -63,6 +63,7 @@ class Request
 							break;
 						}
 
+						// TODO: пересобирать URL
 						if ($captchaText = $captcha->recognize($response->error->captcha_img) != false)
 						{
 							if ($index = strpos($url, '&captcha_sid'))
