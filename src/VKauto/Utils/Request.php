@@ -31,6 +31,14 @@ class Request
 	{
 		$response = json_decode(self::get($url), false);
 
+		if (isset($response->error))
+		{
+			if (isset($response->error->error_code))
+			{
+				die(var_dump($response->error->error_code));
+			}
+		}
+
 		return $response;
 	}
 }
