@@ -59,6 +59,8 @@ class Request
 				{
 					case 14:
 
+						var_dump($url);
+
 						if (is_null($captcha))
 						{
 							break;
@@ -71,7 +73,8 @@ class Request
 								$url = mb_substr($url, 0, $index, 'UTF-8');
 							}
 
-							return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
+							// return self::VK($url . "&captcha_sid={$response->error->captcha_sid}&captcha_text={$captchaText}", $captcha);
+							return die(var_dump($url));
 						}
 						else
 						{
