@@ -22,6 +22,9 @@ class Log
 
 		$text .= $data;
 
+		# Для вывода в консоль Windows
+		$text = mb_convert_encoding($text, 'cp1251');
+
 		echo($text . PHP_EOL);
 	}
 }
