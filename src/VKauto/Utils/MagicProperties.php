@@ -27,9 +27,9 @@ trait MagicProperties
 			$property = strtolower(implode('_', $pieces));
 		}
 
-		if (isset($this->data[$property]))
+		if (isset($this->data->$property))
 		{
-			return $this->data[$property];
+			return $this->data->$property;
 		}
 	}
 }
