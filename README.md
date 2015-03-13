@@ -57,7 +57,7 @@ Log::write('Something clever.', ['prefixes', 'are', 'cool']);
 ```php
 class User
 {
-  use VKauto\Utils\MagicProperties;
+  use \VKauto\Utils\MagicProperties;
   
   public function __construct()
   {
